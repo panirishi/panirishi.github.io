@@ -19,7 +19,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -29,20 +28,23 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 1.85;
+    padding-top: 54px;
   }
 
-  /* ── NAV ── */
-  nav {
-    position: sticky;
+  /* NAV */
+  .topnav {
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
     background: var(--bg);
     border-bottom: 1px solid var(--rule);
-    padding: 0 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 54px;
-    z-index: 200;
+    padding: 0 2.5rem;
+    z-index: 999;
   }
 
   .nav-brand {
@@ -53,11 +55,12 @@
     text-transform: uppercase;
     color: var(--gold);
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem;
     list-style: none;
   }
 
@@ -72,6 +75,7 @@
     padding-bottom: 2px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
   }
 
   .nav-links a:hover {
@@ -79,7 +83,7 @@
     border-bottom-color: var(--gold);
   }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     max-width: 820px;
     margin: 0 auto;
@@ -95,18 +99,6 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .kicker::after {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.5;
   }
 
   .hero h1 {
@@ -148,7 +140,7 @@
     color: var(--ink-faint);
   }
 
-  /* ── SECTION DIVIDER ── */
+  /* DIVIDER */
   .ruled-label {
     display: flex;
     align-items: center;
@@ -175,7 +167,7 @@
     background: var(--rule);
   }
 
-  /* ── CONTENTS GRID ── */
+  /* CONTENTS GRID */
   .contents-grid {
     max-width: 820px;
     margin: 0 auto 1rem;
@@ -223,7 +215,7 @@
     font-weight: 300;
   }
 
-  /* ── ESSAY SECTIONS ── */
+  /* ESSAY */
   .essay-wrap {
     max-width: 700px;
     margin: 0 auto;
@@ -289,7 +281,7 @@
     font-style: normal;
   }
 
-  /* ── EXCERPTS ── */
+  /* EXCERPTS */
   .excerpts-wrap {
     max-width: 820px;
     margin: 0 auto;
@@ -362,7 +354,7 @@
     align-self: start;
   }
 
-  /* ── BIBLIOGRAPHY ── */
+  /* BIBLIOGRAPHY */
   .bib-wrap {
     max-width: 700px;
     margin: 0 auto;
@@ -416,7 +408,7 @@
 
   .bib-entry a:hover { border-bottom-color: var(--gold); }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     max-width: 820px;
     margin: 0 auto;
@@ -434,24 +426,19 @@
     text-transform: uppercase;
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 640px) {
-    nav { padding: 0 1.2rem; }
-    .nav-links { gap: 1rem; }
+  @media (max-width: 700px) {
     .nav-links li:nth-child(n+4) { display: none; }
-    .hero, .ruled-label, .contents-grid, .essay-wrap,
-    .excerpts-wrap, .bib-wrap { padding-left: 1.2rem; padding-right: 1.2rem; }
     .contents-grid { grid-template-columns: 1fr; }
     .excerpt-row { grid-template-columns: 1fr; }
-    .excerpt-tag { justify-self: start; }
+    .excerpt-tag { margin-top: 0.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
-<nav>
+<!-- NAV -->
+<div class="topnav">
   <a class="nav-brand" href="#top">From Sinai to Silicon Valley</a>
   <ul class="nav-links">
     <li><a href="#argument">The Argument</a></li>
@@ -461,9 +448,9 @@
     <li><a href="#evidence">Evidence</a></li>
     <li><a href="#bibliography">Bibliography</a></li>
   </ul>
-</nav>
+</div>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <header class="hero" id="top">
   <p class="kicker">Religious Studies &nbsp;·&nbsp; Final Project &nbsp;·&nbsp; USC 2026</p>
   <h1>From Sinai to<br><em>Silicon Valley</em></h1>
@@ -475,10 +462,10 @@
   </div>
 </header>
 
-<!-- ── CONTENTS ── -->
+<!-- CONTENTS -->
 <div class="ruled-label"><span>Contents</span></div>
 
-<nav class="contents-grid" aria-label="Section navigation">
+<div class="contents-grid">
   <a class="contents-card" href="#argument">
     <p class="contents-num">Section I</p>
     <h3>The Argument</h3>
@@ -509,70 +496,59 @@
     <h3>Bibliography</h3>
     <p>Full citations for all academic and journalistic sources used in this project.</p>
   </a>
-</nav>
+</div>
 
-<!-- ── SECTION I: THE ARGUMENT ── -->
+<!-- SECTION I -->
 <div class="ruled-label"><span>Section I</span></div>
 
 <section class="essay-wrap" id="argument">
   <p class="section-label">The Argument</p>
   <h2>Why does Silicon Valley sound like the Old Testament?</h2>
-
   <p>In the spring of 2023, Marc Andreessen, one of Silicon Valley's most influential venture capitalists, published what he called a "Techno-Optimist Manifesto." Written in the cadence of biblical prophetic literature and concluding with a curated list of intellectual "saints," the document declared that technology is "the glory of human ambition and achievement" — and that its authors were there to "bring the good news." The religious register was not incidental. It was the point.</p>
-
   <p>This project argues that the figure of Moses — prophet, liberator, lawgiver, and shepherd — provides the most illuminating framework for understanding how Silicon Valley's tech leaders construct, perform, and legitimize that authority. Moses is rarely invoked by name in contemporary tech discourse. But the structural logic of the Exodus narrative runs through it like an undercurrent: a visionary leader perceives a truth that others cannot yet see; he names the enemy (inefficiency, ignorance, mortality, planetary extinction); he leads a people out of bondage and through a wilderness of disruption; and he orients them, always, toward a promised land just beyond the horizon.</p>
-
   <blockquote>
     <p>"He seems to see himself as a Moses, someone who makes it possible to pass through the wilderness — but never sets foot in the Promised Land."</p>
     <cite>— Aeon, on Elon Musk and his mission to colonize Mars</cite>
   </blockquote>
-
-  <p>This is the story Elon Musk tells about Mars. It is the story Mark Zuckerberg tells about global connection. It is the story the AI industry tells about the future of human intelligence itself. To make this argument, I draw on Michael Walzer's foundational study <em>Exodus and Revolution</em> (1985), which traces how the Exodus narrative has historically served as the template for Western political and revolutionary thought — from the Puritan settlers to the abolitionists to Marxist revolutionaries. That structure, I argue, has migrated into the secular mythology of Silicon Valley, where it does the same cultural work it has always done: lending moral weight to leadership, urgency to mission, and a sense of collective destiny to what might otherwise look like the self-interest of the very powerful.</p>
+  <p>This is the story Elon Musk tells about Mars. It is the story Mark Zuckerberg tells about global connection. It is the story the AI industry tells about the future of human intelligence itself. To make this argument, I draw on Michael Walzer's foundational study <em>Exodus and Revolution</em> (1985), which traces how the Exodus narrative has historically served as the template for Western political and revolutionary thought. That structure, I argue, has migrated into the secular mythology of Silicon Valley, where it does the same cultural work it has always done: lending moral weight to leadership, urgency to mission, and a sense of collective destiny to what might otherwise look like the self-interest of the very powerful.</p>
 </section>
 
-<!-- ── SECTION II: MOSES & EXODUS ── -->
+<!-- SECTION II -->
 <div class="ruled-label"><span>Section II</span></div>
 
 <section class="essay-wrap" id="moses">
   <p class="section-label">Moses &amp; the Exodus Narrative</p>
   <h2>A structural figure, not merely a theological one</h2>
-
   <p>To understand why the Mosaic archetype resonates so powerfully in contemporary tech discourse, we must first understand what makes Moses such a durable political and cultural symbol. Moses is not, as political philosopher Michael Walzer argues in <em>Exodus and Revolution</em>, primarily a theological figure. He is a structural one. The Exodus narrative follows a precise sequence — oppression, revelation, liberation, wilderness, covenant, promised land — and it is this sequence that has made the story endlessly adaptable across centuries and contexts.</p>
-
   <p>Moses himself occupies a peculiar position within this structure. He is not the promised land's inheritor — he never sets foot in it. He is the figure who perceives the destination, names the enemy, absorbs the people's doubt and rage, and keeps them moving. His authority rests not on institutional power but on a claim to divine revelation — moral before it is political, prophetic before it is managerial.</p>
-
   <p class="placeholder">[ Add your Section II body paragraphs here — drawing on Walzer, Mintz, and the Exodus narrative's history in American political culture. ]</p>
 </section>
 
-<!-- ── SECTION III: SILICON VALLEY'S PROMISED LAND ── -->
+<!-- SECTION III -->
 <div class="ruled-label"><span>Section III</span></div>
 
 <section class="essay-wrap" id="promised-land">
   <p class="section-label">Silicon Valley's Promised Land</p>
   <h2>From Egypt to Mars: the rhetoric of liberation and destination</h2>
-
-  <p class="placeholder">[ Write your Section III here — exploring how tech leaders frame their missions through the language of liberation (from ignorance, inefficiency, mortality, Earth itself) and destination (the Metaverse, Mars, AGI, the Singularity). Draw on Cockerell (Coda Story), Manavis (Document Journal), and the Andreessen Manifesto. ]</p>
+  <p class="placeholder">[ Write your Section III here — exploring how tech leaders frame their missions through the language of liberation and destination. Draw on Cockerell (Coda Story), Manavis (Document Journal), and the Andreessen Manifesto. ]</p>
 </section>
 
-<!-- ── SECTION IV: CASE STUDIES ── -->
+<!-- SECTION IV -->
 <div class="ruled-label"><span>Section IV</span></div>
 
 <section class="essay-wrap" id="case-studies">
   <p class="section-label">The Mosaic Leader: Case Studies</p>
   <h2>Three prophet-CEOs and the structure they share</h2>
-
-  <p class="placeholder">[ Write your Section IV here — close readings of Elon Musk (Moses who cannot enter the Promised Land), Mark Zuckerberg (shepherd of a global people), and Marc Andreessen (lawgiver and prophet). Draw on the Aeon essay, Peters (Gospel Coalition), Pick (CTech), and Barnhart (Christian Business Review). ]</p>
+  <p class="placeholder">[ Write your Section IV here — close readings of Elon Musk, Mark Zuckerberg, and Marc Andreessen. Draw on the Aeon essay, Peters (Gospel Coalition), Pick (CTech), and Barnhart (Christian Business Review). ]</p>
 </section>
 
-<!-- ── SECTION V: EVIDENCE ── -->
+<!-- SECTION V -->
 <div class="ruled-label"><span>Section V</span></div>
 
 <section class="excerpts-wrap" id="evidence">
   <h2>Excerpts &amp; Evidence</h2>
   <p class="sub">Primary source quotations illustrating the Mosaic rhetorical structure in Silicon Valley discourse</p>
-
   <div class="excerpts-list">
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"I am here to bring the good news... We are, in fact, the blessed ones, building the future."</p>
@@ -580,7 +556,6 @@
       </div>
       <span class="excerpt-tag">Prophetic Voice</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"One path is that we stay on Earth forever and then there will be an inevitable extinction event... The alternative is to become a spacefaring civilisation."</p>
@@ -588,7 +563,6 @@
       </div>
       <span class="excerpt-tag">Exodus Structure</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"Our mission is to connect the world... to give everyone the power to share and make the world more open and connected."</p>
@@ -596,7 +570,6 @@
       </div>
       <span class="excerpt-tag">Unifying Shepherd</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"He seems to see himself as a Moses, someone who makes it possible to pass through the wilderness — but never sets foot in the Promised Land."</p>
@@ -604,7 +577,6 @@
       </div>
       <span class="excerpt-tag">Mosaic Archetype</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"Elon Musk believes AI will help us find a 'digital God'... we are creating God in the form of superintelligence."</p>
@@ -612,7 +584,6 @@
       </div>
       <span class="excerpt-tag">Divine Authority</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"Salvation is central to Silicon Valley's narrative. Tech companies sell themselves through promises of salvation, portraying their innovations as essential for survival — much like religion."</p>
@@ -620,7 +591,6 @@
       </div>
       <span class="excerpt-tag">Salvation Narrative</span>
     </div>
-
     <div class="excerpt-row">
       <div>
         <p class="excerpt-q">"The rhetoric of 'existential risk,' 'human extinction,' 'alignment problem,' and 'point of no return' is remarkably apocalyptic. These are secular terms for what amount to eschatological concerns."</p>
@@ -628,11 +598,10 @@
       </div>
       <span class="excerpt-tag">Eschatological Framing</span>
     </div>
-
   </div>
 </section>
 
-<!-- ── BIBLIOGRAPHY ── -->
+<!-- BIBLIOGRAPHY -->
 <div class="ruled-label"><span>Section VI</span></div>
 
 <section class="bib-wrap" id="bibliography">
@@ -640,39 +609,24 @@
   <p class="sub">Chicago-Turabian format &nbsp;·&nbsp; All sources cited in this project</p>
 
   <p class="bib-section-head">Peer-Reviewed Sources</p>
-
   <p class="bib-entry">Barnhart, Cora. "Organizational Failures and the Promised Land Experience." <em>Christian Business Review</em>, Fall 2024. <a href="https://hc.edu/center-for-christianity-in-business/wp-content/uploads/sites/45/2024/10/CBR-2024-Article-4-Barnhart.pdf" target="_blank">https://hc.edu/center-for-christianity-in-business/...</a></p>
-
   <p class="bib-entry">Campbell, Heidi A. "Contextualizing Current Digital Religion Research on Emerging Technologies." <em>Human Behavior and Emerging Technologies</em> 2, no. 1 (2020): 5–17. <a href="https://doi.org/10.1002/hbe2.149" target="_blank">https://doi.org/10.1002/hbe2.149</a></p>
-
   <p class="bib-entry">Rähme, Boris. "Digitalization, AI and the Rise of Techno-Religion: Transhumanist Promises and the Challenge to Enlightenment." <em>Poetics</em> (2025). <a href="https://doi.org/10.1016/j.poetic.2025.101985" target="_blank">https://doi.org/10.1016/j.poetic.2025.101985</a></p>
-
   <p class="bib-entry">Singler, Beth. "An Introduction to Artificial Intelligence and Religion for the Religious Studies Scholar." <em>Implicit Religion</em> 20, no. 3 (2018): 215–231. <a href="https://doi.org/10.1558/imre.35901" target="_blank">https://doi.org/10.1558/imre.35901</a></p>
-
   <p class="bib-entry">Singler, Beth. "'Blessed by the Algorithm': Theistic Conceptions of Artificial Intelligence in Online Discourse." <em>AI &amp; Society</em> 35, no. 4 (2020): 945–955. <a href="https://doi.org/10.1007/s00146-020-00968-2" target="_blank">https://doi.org/10.1007/s00146-020-00968-2</a></p>
-
   <p class="bib-entry">Valenzi, Boris, and Boris Rähme. "Religious Studies Approaches to the Intersection of Artificial Intelligence and Religion: Formations Analogous to Religion." <em>Numen: International Review for the History of Religions</em> (2025). <a href="https://doi.org/10.1080/0048721X.2025.2506893" target="_blank">https://doi.org/10.1080/0048721X.2025.2506893</a></p>
 
   <p class="bib-section-head">Books</p>
-
   <p class="bib-entry">Walzer, Michael. <em>Exodus and Revolution</em>. New York: Basic Books, 1985.</p>
-
   <p class="bib-entry">Woolfe, Lorin. <em>The Bible on Leadership: From Moses to Matthew — Management Lessons for Contemporary Leaders</em>. New York: AMACOM, 2002.</p>
 
   <p class="bib-section-head">Journalistic &amp; Web Sources</p>
-
   <p class="bib-entry">Cockerell, Isobel. "The Future According to Silicon Valley's Prophets." <em>Coda Story</em>, December 8, 2025. <a href="https://www.codastory.com/authoritarian-tech/the-future-according-to-silicon-valleys-prophets/" target="_blank">https://www.codastory.com/...</a></p>
-
   <p class="bib-entry">Daley, Jason. "Elon Musk Puts His Case for a Multi-Planet Civilisation." <em>Aeon</em>, April 8, 2021. <a href="https://aeon.co/essays/elon-musk-puts-his-case-for-a-multi-planet-civilisation" target="_blank">https://aeon.co/essays/...</a></p>
-
   <p class="bib-entry">Manavis, Sarah. "The Myth of Silicon Valley Messiahs and the Rise of TESCREALism." <em>Document Journal</em>, May 23, 2024. <a href="https://www.documentjournal.com/2024/05/the-myth-of-silicon-valley-messiahs-and-the-rise-of-tescrealism-longtermism-transhumanism-technology-ai/" target="_blank">https://www.documentjournal.com/...</a></p>
-
   <p class="bib-entry">Mintz, Steven. "How Exodus Haunts the Modern Conscience." <em>Higher Ed Gamma</em> (Substack), April 12, 2025. <a href="https://stevenmintz.substack.com/p/how-exodus-haunts-the-modern-conscience" target="_blank">https://stevenmintz.substack.com/...</a></p>
-
   <p class="bib-entry">Peters, Ted. "When Silicon Valley Started Sounding Like a '70s Prophecy Conference." <em>The Gospel Coalition</em>, November 5, 2025. <a href="https://www.thegospelcoalition.org/article/silicon-valley-prophecy-conference/" target="_blank">https://www.thegospelcoalition.org/...</a></p>
-
   <p class="bib-entry">Pick, Adi. "When Technology Becomes Religion: How Silicon Valley Is Reshaping Faith." <em>CTech (Calcalist)</em>, December 16, 2024. <a href="https://www.calcalistech.com/ctechnews/article/rjex7p2nkg" target="_blank">https://www.calcalistech.com/...</a></p>
-
 </section>
 
 <footer>
