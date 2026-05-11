@@ -34,9 +34,7 @@
   /* NAV */
   .topnav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 54px;
     background: var(--bg);
     border-bottom: 1px solid var(--rule);
@@ -78,10 +76,7 @@
     white-space: nowrap;
   }
 
-  .nav-links a:hover {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
+  .nav-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
   /* HERO */
   .hero {
@@ -111,10 +106,7 @@
     margin-bottom: 1.8rem;
   }
 
-  .hero h1 em {
-    font-style: italic;
-    color: var(--sepia);
-  }
+  .hero h1 em { font-style: italic; color: var(--sepia); }
 
   .hero-deck {
     font-size: 1.15rem;
@@ -247,17 +239,6 @@
     margin-bottom: 1.5rem;
   }
 
-  .essay-wrap p.placeholder {
-    color: var(--ink-faint);
-    font-style: italic;
-    border: 1px dashed var(--rule);
-    padding: 1.5rem;
-    border-radius: 2px;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    background: var(--gold-light);
-  }
-
   blockquote {
     border-left: 2px solid var(--gold);
     margin: 2.8rem 0;
@@ -279,6 +260,51 @@
     letter-spacing: 0.08em;
     color: var(--ink-faint);
     font-style: normal;
+  }
+
+  /* PRIMARY SOURCE CARDS */
+  .source-card {
+    background: var(--gold-light);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 1.8rem 2rem;
+    margin: 2.8rem 0;
+  }
+
+  .source-card-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .source-card-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 1rem;
+  }
+
+  .source-card-meta {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .source-card-meta::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--rule);
   }
 
   /* EXCERPTS */
@@ -408,6 +434,32 @@
 
   .bib-entry a:hover { border-bottom-color: var(--gold); }
 
+  /* FOOTNOTES */
+  .footnotes {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footnotes h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .footnotes p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--ink-faint);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+  }
+
   /* FOOTER */
   footer {
     max-width: 820px;
@@ -452,9 +504,9 @@
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <p class="kicker">Religious Studies &nbsp;·&nbsp; Final Project &nbsp;·&nbsp; USC 2026</p>
+  <p class="kicker">Moses-GESM &nbsp;·&nbsp; Final Project &nbsp;·&nbsp; USC 2026</p>
   <h1>From Sinai to<br><em>Silicon Valley</em></h1>
-  <p class="hero-deck">Moses is anything but a simple figure. This project examines how the Exodus narrative — prophet, wilderness, promised land — quietly structures the way Silicon Valley's tech leaders construct moral authority and imagine the future of humanity.</p>
+  <p class="hero-deck">Moses is anything but a simple figure. This project examines how the Exodus narrative quietly shapes the way Silicon Valley's tech leaders construct moral authority and imagine the future of humanity.</p>
   <div class="hero-meta">
     <span>Risha</span>
     <span>USC &nbsp;·&nbsp; Spring 2026</span>
@@ -498,75 +550,135 @@
   </a>
 </div>
 
-<!-- SECTION I -->
+<!-- SECTION I: THE ARGUMENT -->
 <div class="ruled-label"><span>Section I</span></div>
 
 <section class="essay-wrap" id="argument">
   <p class="section-label">The Argument</p>
   <h2>Why does Silicon Valley sound like the Old Testament?</h2>
-  <p>In the spring of 2023, Marc Andreessen, one of Silicon Valley's most influential venture capitalists, published what he called a "Techno-Optimist Manifesto." Written in the cadence of biblical prophetic literature and concluding with a curated list of intellectual "saints," the document declared that technology is "the glory of human ambition and achievement" — and that its authors were there to "bring the good news." The religious register was not incidental. It was the point.</p>
-  <p>This project argues that the figure of Moses — prophet, liberator, lawgiver, and shepherd — provides the most illuminating framework for understanding how Silicon Valley's tech leaders construct, perform, and legitimize that authority. Moses is rarely invoked by name in contemporary tech discourse. But the structural logic of the Exodus narrative runs through it like an undercurrent: a visionary leader perceives a truth that others cannot yet see; he names the enemy (inefficiency, ignorance, mortality, planetary extinction); he leads a people out of bondage and through a wilderness of disruption; and he orients them, always, toward a promised land just beyond the horizon.</p>
+
+  <p>In the spring of 2023, Marc Andreessen, one of Silicon Valley's most prolific venture capitalists, published what he called his "Techno-Optimist Manifesto," written entirely in the cadence of biblical prophetic literature and concluding with a curated list of intellectual "saints."</p>
+
   <blockquote>
-    <p>"He seems to see himself as a Moses, someone who makes it possible to pass through the wilderness — but never sets foot in the Promised Land."</p>
-    <cite>— Aeon, on Elon Musk and his mission to colonize Mars</cite>
+    <p>"Beauty exists only in struggle. There is no masterpiece that has not an aggressive character. Technology must be a violent assault on the forces of the unknown, to force them to bow before man."</p>
+    <cite>— Marc Andreessen, Techno-Optimist Manifesto, 2023</cite>
   </blockquote>
-  <p>This is the story Elon Musk tells about Mars. It is the story Mark Zuckerberg tells about global connection. It is the story the AI industry tells about the future of human intelligence itself. To make this argument, I draw on Michael Walzer's foundational study <em>Exodus and Revolution</em> (1985), which traces how the Exodus narrative has historically served as the template for Western political and revolutionary thought. That structure, I argue, has migrated into the secular mythology of Silicon Valley, where it does the same cultural work it has always done: lending moral weight to leadership, urgency to mission, and a sense of collective destiny to what might otherwise look like the self-interest of the very powerful.</p>
+
+  <p>Essentially, this document declared that technology is the "glory of human ambition and achievement," and positioned its advocates as bearers of a sacred mission. This religious framing is not an incidental event, but rather, a phenomenon seen more and more frequently in tech spheres. Andreessen was not simply making a claim about software or market tendencies, but moral authority, effectively posturing himself and his cohort as prophets — figures uniquely equipped to guide humanity through an era of unprecedented societal transformation. Sound familiar?</p>
+
+  <p>This project seeks to argue that the Mosaic archetype (prophet, liberator, lawgiver, shepherd) provides the most illuminating framework for understanding how Silicon Valley's tech leaders construct, perform, and legitimize that moral authority. Although Moses is rarely invoked by name, recent tech discourse is frequently underlined by the structural logic of the Exodus narrative: a visionary leader perceives a truth that others cannot see and often doubt; he names the enemy and leads people out of bondage and through an unnavigable wilderness; and most crucially, leads them to a promised land just beyond the horizon. As one writer observed, Elon Musk "seems to see himself as a Moses, someone who makes it possible to pass through the wilderness — but never sets foot in the Promised Land."<sup>1</sup></p>
+
+  <p>This argument is principally based off of Michael Walzer's foundational 1985 study <em>Exodus and Revolution</em>, which traces how the Exodus narrative has historically served as a template for Western political thought, from Puritan settlers to abolitionists to Marxist revolutionaries. Walzer shows that the power of the Exodus narrative is not strictly theological, but structural, stemming from the ubiquitousness of its themes like oppression, liberation, and salvation.<sup>2</sup> I argue this framework has been transmuted into a sort of secular mythology touted by Silicon Valley leaders, where it serves the same purpose it always has.</p>
+
+  <p>By joining political and theological thought with a close reading of contemporary tech rhetoric, this project aims to show that Moses is not a distant analogy, but an active, secularized cultural tool that tech landscape leaders use to construct an image of the idealized leadership of the future.</p>
 </section>
 
-<!-- SECTION II -->
+<!-- SECTION II: MOSES & EXODUS -->
 <div class="ruled-label"><span>Section II</span></div>
 
 <section class="essay-wrap" id="moses">
   <p class="section-label">Moses &amp; the Exodus Narrative</p>
-  <h2>A structural figure, not merely a theological one</h2>
-  <p>To understand why the Mosaic archetype resonates so powerfully in contemporary tech discourse, we must first understand what makes Moses such a durable political and cultural symbol. Moses is not, as political philosopher Michael Walzer argues in <em>Exodus and Revolution</em>, primarily a theological figure. He is a structural one. The Exodus narrative follows a precise sequence — oppression, revelation, liberation, wilderness, covenant, promised land — and it is this sequence that has made the story endlessly adaptable across centuries and contexts.</p>
-  <p>Moses himself occupies a peculiar position within this structure. He is not the promised land's inheritor — he never sets foot in it. He is the figure who perceives the destination, names the enemy, absorbs the people's doubt and rage, and keeps them moving. His authority rests not on institutional power but on a claim to divine revelation — moral before it is political, prophetic before it is managerial.</p>
-  <p class="placeholder">[ Add your Section II body paragraphs here — drawing on Walzer, Mintz, and the Exodus narrative's history in American political culture. ]</p>
+  <h2>The structural, secular Moses</h2>
+
+  <p>In order to understand why the Mosaic archetype is so abundant in modern tech discourse, we must first understand what exactly makes Moses such a durable political and cultural symbol. Moses is not, as Walzer argues, primarily a theological figure, but a prototypal one. Exodus follows a precise, repeatable sequence: oppression → liberation → wilderness → promised land.</p>
+
+  <p>This very sequence has made the story endlessly adaptable, endlessly applicable, from the Hebrew Bible to the works of the present. "The Exodus is not a myth," Walzer writes, but "a history that can be used"; it is a template that political actors have returned to again and again precisely because its structure maps so cleanly onto the experience of collective transformation.<sup>3</sup></p>
+
+  <p>Moses himself occupies a peculiar and powerful role within this framework; he never inherits the promised land, as he never sets foot in it. He simply perceives the destination, names the oppressor, guides the people, and does it all alone. His authority is far from institutional; it is a direct claim to divine revelation. He is moral as well as political, prophetic as well as directorial, and this combination is exactly what makes him so useful as a model for leaders who wish to assert their visionary nature, their burden, and their divine authority that transcends ordinary institutional legitimacy.</p>
+
+  <p>In 2025, Steven Mintz traced how the Exodus narrative became one of the foundational myths of American identity specifically — from John Winthrop's "city upon a hill" to Frederick Douglass, who saw in Moses a direct mirror of the abolitionist struggle, to Martin Luther King Jr.'s final sermon, in which he described standing on the mountaintop and seeing the promised land.<sup>4</sup> The Exodus story, Mintz argues, does not merely recount liberation; it demands a moral response. It insists that freedom is never final, and that each generation faces its own Egypt, its own desert, and its own Pharaoh.</p>
+
+  <p>What makes the Exodus narrative particularly powerful as a cultural template is its combination of morality and flexibility. The enemy can be anything from Pharaoh to poverty to disease to ignorance; the promised land can be anything from Canaan to America to racial equality to Mars; and the prophet-leader can be anyone willing to claim the mantle. It is this flexibility, more than any specific theological statement, that makes Moses such a compelling model for any leaders operating in a culture that remains, beneath its secular surface, deeply shaped by biblical narrative.</p>
 </section>
 
-<!-- SECTION III -->
+<!-- SECTION III: PROMISED LAND -->
 <div class="ruled-label"><span>Section III</span></div>
 
 <section class="essay-wrap" id="promised-land">
   <p class="section-label">Silicon Valley's Promised Land</p>
   <h2>From Egypt to Mars: the rhetoric of liberation and destination</h2>
-  <p class="placeholder">[ Write your Section III here — exploring how tech leaders frame their missions through the language of liberation and destination. Draw on Cockerell (Coda Story), Manavis (Document Journal), and the Andreessen Manifesto. ]</p>
+
+  <p>At its core, Silicon Valley is a culture of striving and destination. Every product and startup is oriented towards a future state that does not yet exist — a world more free of inefficiency, disease, distance, and struggle. This orientation is so embedded in tech culture that it does not immediately register as a choice, but it is one. And it is, as this section argues, fundamentally Mosaic in nature, as it echoes a vision of liberation from present bondage towards a future that most people cannot see, but rather must be guided toward.</p>
+
+  <p>Scholars of religion and tech alike have identified this as one of the defining features of contemporary "techno-utopianism." In the peer-reviewed journal <em>Religion Compass</em>, Mikael Leidenhag argues that transhumanism — the intellectual movement animating much of Silicon Valley's AI discourse — "gives rise to both a soteriological conception of human nature and an eschatological prediction about physical reality."<sup>5</sup> In simpler terms, tech culture doesn't just promise better products; it promises a salvific and transformed world. This is not incidentally religious language, but instead religious logic and narrative applied to technological ends. In his peer-reviewed study of techno-eschatology in American culture, Robert Geraci similarly observes that Silicon Valley's futurist discourse is saturated with a vision of "apocalyptic AI" that functions as a secular version of a typically religious end-times narrative, complete with a "Judgement Day," a transformed world after it, and prophets who see it coming.<sup>6</sup></p>
+
+  <p>The clearest example of this phenomenon is Andreessen's "Techno-Optimist Manifesto." The document opens with a declaration of faith — "We believe in technology" — and proceeds through a series of escalating promises about what technology will deliver: the defeat of poverty, disease, and death itself.<sup>7</sup> It concludes with a list of saints and prophets, positioning Andreessen and his peers as the inheritors of a long tradition of visionaries who saw the future before others could. The structure is unmistakably Mosaic: here is the promised land; here is the path; here are our enemies and obstacles. Follow us.</p>
+
+  <div class="source-card">
+    <p class="source-card-label">Primary Source &nbsp;·&nbsp; Andreessen Horowitz, October 2023</p>
+    <p class="source-card-quote">"Our enemy is deceleration, de-growth, depopulation — the nihilistic wish, so trendy among our elites, for fewer people, less energy, and more suffering and death."</p>
+    <p class="source-card-meta">Marc Andreessen, "Techno-Optimist Manifesto" — naming the modern Pharaoh</p>
+  </div>
+
+  <p>Adi Pick of CTech identifies this rhetoric as central to Silicon Valley's self-presentation, stating that tech companies "sell themselves through promises of salvation, portraying their innovations as essential for survival — much like religion."<sup>8</sup> Similarly, Isobel Cockerell of <em>Coda Story</em> documents how this framing has intensified around AI specifically, with some tech leaders describing AI development in explicitly religious terms as the moment of humanity's final transformation, akin to the crossing of the Jordan.<sup>9</sup></p>
+
+  <p>The "promised land" in Silicon Valley rhetoric takes different forms depending on the speaker. For Musk, it is literally another planet. For Zuckerberg, it is universal global connection. For the AI industry broadly, it is the moment of artificial general intelligence. In each case, the structure is the same: here is Egypt, here is the path we must take, and on the other side lies the land of promise.</p>
 </section>
 
-<!-- SECTION IV -->
+<!-- SECTION IV: CASE STUDIES -->
 <div class="ruled-label"><span>Section IV</span></div>
 
 <section class="essay-wrap" id="case-studies">
-  <p class="section-label">The Mosaic Leader: Case Studies</p>
+  <p class="section-label">The Mosaic Leader</p>
   <h2>Three prophet-CEOs and the structure they share</h2>
-  <p class="placeholder">[ Write your Section IV here — close readings of Elon Musk, Mark Zuckerberg, and Marc Andreessen. Draw on the Aeon essay, Peters (Gospel Coalition), Pick (CTech), and Barnhart (Christian Business Review). ]</p>
+
+  <p>This section examines Elon Musk, Mark Zuckerberg, and Marc Andreessen through the lens of the Mosaic archetype, arguing that each reproduces a distinct facet of the Moses figure: Musk as the prophet who will never enter the promised land, Zuckerberg as the shepherd of a global people, and Andreessen as the lawgiver descending from the mountain with tablets of God's word.</p>
+
+  <h2 style="font-size:1.3rem; margin-top: 2.5rem; margin-bottom: 1rem;">Elon Musk</h2>
+
+  <p>Of the three figures examined here, Musk translates most directly onto the Mosaic archetype. His framing of the Mars mission maps the Exodus structure with striking precision. Earth is Egypt, a planet of finite resources and inevitable decline; the journey through space is the desert, dangerous, costly, sustained only by faith in the destination; and Mars is Canaan, the promised land, the new beginning. And most importantly, Musk is Moses, the visionary who perceived the necessity of the journey before others could, and who frames the entire project in terms of moral obligation rather than personal ambition.</p>
+
+  <div class="source-card">
+    <p class="source-card-label">Primary Source &nbsp;·&nbsp; National Geographic Interview, 2016</p>
+    <p class="source-card-quote">"The future of humanity is fundamentally going to bifurcate along one of two directions: Either we're going to become a multiplanet species and a spacefaring civilization, or we're going to be stuck on one planet until some eventual extinction event. For me to be excited and inspired about the future, it's got to be the first option. It's got to be: We're going to be a spacefaring civilization."</p>
+    <p class="source-card-meta">Elon Musk, interviewed by Ron Howard for National Geographic Channel's <em>MARS</em>, November 2016</p>
+  </div>
+
+  <p>The language here is unmistakably biblical in structure, even if secular in vocabulary. "Bifurcate," "extinction," "inspired" — these are the terms of prophecy and revelation, not engineering. Musk does not merely describe a technical challenge; he describes a moral crossroads, one that humanity must choose correctly or perish. This is precisely the register Moses inhabits when he stands before Pharaoh, before the people at the foot of Sinai, before the Jordan he will never cross.</p>
+
+  <h2 style="font-size:1.3rem; margin-top: 2.5rem; margin-bottom: 1rem;">Mark Zuckerberg</h2>
+
+  <p>Zuckerberg's Mosaic register is quieter but no less significant. Where Musk's promised land is tangible, Zuckerberg's isn't. It is a world in which every human being is connected to one another, in which the isolation and fragmentation of modern life have been healed by the platform he has built.</p>
+
+  <div class="source-card">
+    <p class="source-card-label">Primary Source &nbsp;·&nbsp; Facebook Communities Summit, June 2017</p>
+    <p class="source-card-quote">"For the last decade or so we've been focusing on making the world more open and connected. But I used to think that if we just give people a voice and help some people connect that that would make the world a whole lot better by itself. Look around and our society is still so divided. We have a responsibility to do more, not just to connect the world but to bring the world closer together."</p>
+    <p class="source-card-meta">Mark Zuckerberg, announcing Meta's new mission statement — "Give people the power to build community and bring the world closer together"</p>
+  </div>
+
+  <p>Meta's mission "to give people the power to build community and bring the world closer together" is, in Mosaic terms, a vision of covenant: a people bound together, unified, no longer wandering.<sup>11</sup> Moses is, before anything else, a shepherd tending flocks in Midian when he first encounters the burning bush. Zuckerberg's self-presentation draws on a similar logic: his billions of users are a flock, scattered and isolated, and he has built the technology to bring them together.</p>
+
+  <h2 style="font-size:1.3rem; margin-top: 2.5rem; margin-bottom: 1rem;">Marc Andreessen</h2>
+
+  <p>Andreessen is the Moses who descends from the mountain with the tablets, codifies the values of God, and presents them as divine truth. The "Techno-Optimist Manifesto" is, in this way, Andreessen's version of the Ten Commandments. It is a set of authoritative pronouncements about what is true, what is good, and what must be done, delivered from a position of claimed prophetic authority.<sup>12</sup> Ted Peters, writing for <em>The Gospel Coalition</em>, notes that the rhetoric of Silicon Valley's AI discourse has become "remarkably apocalyptic," using secular terms like "existential risk," "alignment problem," and "point of no return" — for what are arguably theological concerns.<sup>13</sup> Leidenhag's framework helps clarify what is at stake here: when Silicon Valley leaders speak in these terms, they are not merely making predictions; they are constructing a narrative in which technology is the agent of salvation and its leaders are the prophets charged with delivering it.<sup>14</sup></p>
 </section>
 
-<!-- SECTION V -->
+<!-- SECTION V: EVIDENCE -->
 <div class="ruled-label"><span>Section V</span></div>
 
 <section class="excerpts-wrap" id="evidence">
   <h2>Excerpts &amp; Evidence</h2>
   <p class="sub">Primary source quotations illustrating the Mosaic rhetorical structure in Silicon Valley discourse</p>
+
   <div class="excerpts-list">
     <div class="excerpt-row">
       <div>
-        <p class="excerpt-q">"I am here to bring the good news... We are, in fact, the blessed ones, building the future."</p>
+        <p class="excerpt-q">"We believe in technology... Technology is the glory of human ambition and achievement, the spearhead of progress, and the realization of our potential."</p>
         <p class="excerpt-src">Marc Andreessen &nbsp;·&nbsp; Techno-Optimist Manifesto, 2023</p>
       </div>
       <span class="excerpt-tag">Prophetic Voice</span>
     </div>
     <div class="excerpt-row">
       <div>
-        <p class="excerpt-q">"One path is that we stay on Earth forever and then there will be an inevitable extinction event... The alternative is to become a spacefaring civilisation."</p>
-        <p class="excerpt-src">Elon Musk &nbsp;·&nbsp; On the mission of SpaceX</p>
+        <p class="excerpt-q">"Either we're going to become a multiplanet species... or we're going to be stuck on one planet until some eventual extinction event."</p>
+        <p class="excerpt-src">Elon Musk &nbsp;·&nbsp; National Geographic, 2016</p>
       </div>
       <span class="excerpt-tag">Exodus Structure</span>
     </div>
     <div class="excerpt-row">
       <div>
-        <p class="excerpt-q">"Our mission is to connect the world... to give everyone the power to share and make the world more open and connected."</p>
-        <p class="excerpt-src">Mark Zuckerberg &nbsp;·&nbsp; Meta Mission Statement</p>
+        <p class="excerpt-q">"Give people the power to build community and bring the world closer together."</p>
+        <p class="excerpt-src">Mark Zuckerberg &nbsp;·&nbsp; Meta Mission Statement, 2017</p>
       </div>
       <span class="excerpt-tag">Unifying Shepherd</span>
     </div>
@@ -579,14 +691,14 @@
     </div>
     <div class="excerpt-row">
       <div>
-        <p class="excerpt-q">"Elon Musk believes AI will help us find a 'digital God'... we are creating God in the form of superintelligence."</p>
-        <p class="excerpt-src">Isobel Cockerell &nbsp;·&nbsp; Coda Story, December 2025</p>
+        <p class="excerpt-q">"Our enemy is deceleration, de-growth, depopulation — the nihilistic wish, so trendy among our elites, for fewer people, less energy, and more suffering and death."</p>
+        <p class="excerpt-src">Marc Andreessen &nbsp;·&nbsp; Techno-Optimist Manifesto, 2023</p>
       </div>
-      <span class="excerpt-tag">Divine Authority</span>
+      <span class="excerpt-tag">Naming the Enemy</span>
     </div>
     <div class="excerpt-row">
       <div>
-        <p class="excerpt-q">"Salvation is central to Silicon Valley's narrative. Tech companies sell themselves through promises of salvation, portraying their innovations as essential for survival — much like religion."</p>
+        <p class="excerpt-q">"Tech companies sell themselves through promises of salvation, portraying their innovations as essential for survival — much like religion."</p>
         <p class="excerpt-src">Adi Pick &nbsp;·&nbsp; CTech (Calcalist), December 2024</p>
       </div>
       <span class="excerpt-tag">Salvation Narrative</span>
@@ -609,28 +721,71 @@
   <p class="sub">Chicago-Turabian format &nbsp;·&nbsp; All sources cited in this project</p>
 
   <p class="bib-section-head">Peer-Reviewed Sources</p>
+
   <p class="bib-entry">Barnhart, Cora. "Organizational Failures and the Promised Land Experience." <em>Christian Business Review</em>, Fall 2024. <a href="https://hc.edu/center-for-christianity-in-business/wp-content/uploads/sites/45/2024/10/CBR-2024-Article-4-Barnhart.pdf" target="_blank">https://hc.edu/center-for-christianity-in-business/...</a></p>
+
   <p class="bib-entry">Campbell, Heidi A. "Contextualizing Current Digital Religion Research on Emerging Technologies." <em>Human Behavior and Emerging Technologies</em> 2, no. 1 (2020): 5–17. <a href="https://doi.org/10.1002/hbe2.149" target="_blank">https://doi.org/10.1002/hbe2.149</a></p>
-  <p class="bib-entry">Rähme, Boris. "Digitalization, AI and the Rise of Techno-Religion: Transhumanist Promises and the Challenge to Enlightenment." <em>Poetics</em> (2025). <a href="https://doi.org/10.1016/j.poetic.2025.101985" target="_blank">https://doi.org/10.1016/j.poetic.2025.101985</a></p>
+
+  <p class="bib-entry">Geraci, Robert M. "A Tale of Two Futures: Techno-Eschatology in the US and India." <em>Social Compass</em> 63, no. 3 (2016): 319–335. <a href="https://doi.org/10.1177/0037768616652332" target="_blank">https://doi.org/10.1177/0037768616652332</a></p>
+
+  <p class="bib-entry">Leidenhag, Mikael. "Saved through Technology: Exploring the Soteriology and Eschatology of Transhumanism." <em>Religion Compass</em> 14 (2020): 1–9. <a href="https://doi.org/10.1111/rec3.12377" target="_blank">https://doi.org/10.1111/rec3.12377</a></p>
+
   <p class="bib-entry">Singler, Beth. "An Introduction to Artificial Intelligence and Religion for the Religious Studies Scholar." <em>Implicit Religion</em> 20, no. 3 (2018): 215–231. <a href="https://doi.org/10.1558/imre.35901" target="_blank">https://doi.org/10.1558/imre.35901</a></p>
+
   <p class="bib-entry">Singler, Beth. "'Blessed by the Algorithm': Theistic Conceptions of Artificial Intelligence in Online Discourse." <em>AI &amp; Society</em> 35, no. 4 (2020): 945–955. <a href="https://doi.org/10.1007/s00146-020-00968-2" target="_blank">https://doi.org/10.1007/s00146-020-00968-2</a></p>
-  <p class="bib-entry">Valenzi, Boris, and Boris Rähme. "Religious Studies Approaches to the Intersection of Artificial Intelligence and Religion: Formations Analogous to Religion." <em>Numen: International Review for the History of Religions</em> (2025). <a href="https://doi.org/10.1080/0048721X.2025.2506893" target="_blank">https://doi.org/10.1080/0048721X.2025.2506893</a></p>
 
   <p class="bib-section-head">Books</p>
+
   <p class="bib-entry">Walzer, Michael. <em>Exodus and Revolution</em>. New York: Basic Books, 1985.</p>
+
   <p class="bib-entry">Woolfe, Lorin. <em>The Bible on Leadership: From Moses to Matthew — Management Lessons for Contemporary Leaders</em>. New York: AMACOM, 2002.</p>
 
   <p class="bib-section-head">Journalistic &amp; Web Sources</p>
+
+  <p class="bib-entry">Andreessen, Marc. "Techno-Optimist Manifesto." Andreessen Horowitz, October 16, 2023. <a href="https://a16z.com/the-techno-optimist-manifesto/" target="_blank">https://a16z.com/the-techno-optimist-manifesto/</a></p>
+
   <p class="bib-entry">Cockerell, Isobel. "The Future According to Silicon Valley's Prophets." <em>Coda Story</em>, December 8, 2025. <a href="https://www.codastory.com/authoritarian-tech/the-future-according-to-silicon-valleys-prophets/" target="_blank">https://www.codastory.com/...</a></p>
+
   <p class="bib-entry">Daley, Jason. "Elon Musk Puts His Case for a Multi-Planet Civilisation." <em>Aeon</em>, April 8, 2021. <a href="https://aeon.co/essays/elon-musk-puts-his-case-for-a-multi-planet-civilisation" target="_blank">https://aeon.co/essays/...</a></p>
+
   <p class="bib-entry">Manavis, Sarah. "The Myth of Silicon Valley Messiahs and the Rise of TESCREALism." <em>Document Journal</em>, May 23, 2024. <a href="https://www.documentjournal.com/2024/05/the-myth-of-silicon-valley-messiahs-and-the-rise-of-tescrealism-longtermism-transhumanism-technology-ai/" target="_blank">https://www.documentjournal.com/...</a></p>
+
   <p class="bib-entry">Mintz, Steven. "How Exodus Haunts the Modern Conscience." <em>Higher Ed Gamma</em> (Substack), April 12, 2025. <a href="https://stevenmintz.substack.com/p/how-exodus-haunts-the-modern-conscience" target="_blank">https://stevenmintz.substack.com/...</a></p>
+
+  <p class="bib-entry">Musk, Elon. Interview by Ron Howard. <em>MARS</em>, National Geographic Channel, November 2016. Quoted in "Elon Musk: A Million Humans Could Live on Mars By the 2060s." <em>National Geographic</em>. <a href="https://www.nationalgeographic.com/science/article/elon-musk-spacex-exploring-mars-planets-space-science" target="_blank">https://www.nationalgeographic.com/...</a></p>
+
   <p class="bib-entry">Peters, Ted. "When Silicon Valley Started Sounding Like a '70s Prophecy Conference." <em>The Gospel Coalition</em>, November 5, 2025. <a href="https://www.thegospelcoalition.org/article/silicon-valley-prophecy-conference/" target="_blank">https://www.thegospelcoalition.org/...</a></p>
+
   <p class="bib-entry">Pick, Adi. "When Technology Becomes Religion: How Silicon Valley Is Reshaping Faith." <em>CTech (Calcalist)</em>, December 16, 2024. <a href="https://www.calcalistech.com/ctechnews/article/rjex7p2nkg" target="_blank">https://www.calcalistech.com/...</a></p>
+
+  <p class="bib-entry">Zuckerberg, Mark. Speech at Facebook Communities Summit. Chicago, June 22, 2017. Reported in "Facebook Changes Mission Statement to 'Bring the World Closer Together.'" <em>TechCrunch</em>. <a href="https://techcrunch.com/2017/06/22/bring-the-world-closer-together/" target="_blank">https://techcrunch.com/...</a></p>
 </section>
 
+<!-- FOOTNOTES -->
+<div class="essay-wrap" style="border-bottom: none; padding-top: 1rem; padding-bottom: 2rem;">
+  <div class="footnotes">
+    <h3>Notes</h3>
+    <p><sup>1</sup> Jason Daley, "Elon Musk Puts His Case for a Multi-Planet Civilisation," <em>Aeon</em>, April 8, 2021.</p>
+    <p><sup>2</sup> Michael Walzer, <em>Exodus and Revolution</em> (New York: Basic Books, 1985), 4.</p>
+    <p><sup>3</sup> Walzer, <em>Exodus and Revolution</em>, 12.</p>
+    <p><sup>4</sup> Steven Mintz, "How Exodus Haunts the Modern Conscience," <em>Higher Ed Gamma</em> (Substack), April 12, 2025.</p>
+    <p><sup>5</sup> Mikael Leidenhag, "Saved through Technology: Exploring the Soteriology and Eschatology of Transhumanism," <em>Religion Compass</em> 14 (2020): 7, https://doi.org/10.1111/rec3.12377.</p>
+    <p><sup>6</sup> Robert M. Geraci, "A Tale of Two Futures: Techno-Eschatology in the US and India," <em>Social Compass</em> 63, no. 3 (2016): 320, https://doi.org/10.1177/0037768616652332.</p>
+    <p><sup>7</sup> Marc Andreessen, "Techno-Optimist Manifesto," October 2023, https://a16z.com/the-techno-optimist-manifesto/.</p>
+    <p><sup>8</sup> Adi Pick, "When Technology Becomes Religion: How Silicon Valley Is Reshaping Faith," <em>CTech (Calcalist)</em>, December 16, 2024.</p>
+    <p><sup>9</sup> Isobel Cockerell, "The Future According to Silicon Valley's Prophets," <em>Coda Story</em>, December 8, 2025.</p>
+    <p><sup>10</sup> Daley, "Elon Musk Puts His Case."</p>
+    <p><sup>11</sup> Mark Zuckerberg, speech at Facebook Communities Summit, Chicago, June 22, 2017.</p>
+    <p><sup>12</sup> Andreessen, "Techno-Optimist Manifesto."</p>
+    <p><sup>13</sup> Ted Peters, "When Silicon Valley Started Sounding Like a '70s Prophecy Conference," <em>The Gospel Coalition</em>, November 5, 2025.</p>
+    <p><sup>14</sup> Leidenhag, "Saved through Technology," 7.</p>
+    <p><sup>15</sup> Geraci, "A Tale of Two Futures," 322.</p>
+    <p><sup>16</sup> Sarah Manavis, "The Myth of Silicon Valley Messiahs and the Rise of TESCREALism," <em>Document Journal</em>, May 23, 2024.</p>
+  </div>
+</div>
+
 <footer>
-  <p>From Sinai to Silicon Valley &nbsp;·&nbsp; Religious Studies Final Project</p>
+  <p>From Sinai to Silicon Valley &nbsp;·&nbsp; Moses-GESM Final Project</p>
   <p>Risha &nbsp;·&nbsp; USC &nbsp;·&nbsp; Spring 2026</p>
 </footer>
 
